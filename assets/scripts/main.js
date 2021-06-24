@@ -5,7 +5,7 @@ let numDice = document.querySelector("#diceNum");
 let totalDiceRolls = document.querySelector("#diceTotal");
 let showRolls = document.querySelector("#allRollsBtn")
 let diceList = document.querySelector("#rollsList");
-
+let resetButton = document.querySelector("#resetBtn");
 
 function diceImg(num){
   let imgElement = document.createElement('img')
@@ -42,7 +42,8 @@ rollDice.addEventListener("click", function () {
 });
 
 showRolls.addEventListener("click", function () {
-  document.querySelectorAll("li").forEach(e => e.parentNode.removeChild(e));
+  rollsList.innerHTML = "";
+  // document.querySelectorAll("li").forEach(e => e.parentNode.removeChild(e));
   for (let index = 0; index < dieRolls.length; index++) {
     let newLi = document.createElement('li')
     diceList.append(newLi)
@@ -52,6 +53,19 @@ showRolls.addEventListener("click", function () {
   }
   console.log(diceList)
 });
+
+resetButton.addEventListener("click",function(){
+    console.log("reset button")
+    dieRolls = [];
+    totalDiceRolls.innerHTML = "___";
+    // document.querySelectorAll("li").forEach(e => e.parentNode.removeChild(e));
+    rollsList.innerHTML = ""; 
+    numDice.value = "";
+});
+
+/*
+Just getting this to work like it did in the class. Leaving the append above for actual functionality.
+*/
 
 // showRolls.addEventListener("click", function () {
 //   document.querySelectorAll("li").forEach(e => e.parentNode.removeChild(e));
