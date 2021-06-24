@@ -1,6 +1,7 @@
 let dieRolls = [];
 
 let rollDice = document.querySelector("#rollBtn");
+let numDice = document.querySelector("#diceNum");
 let showRolls = document.querySelector("#allRollsBtn")
 let diceList = document.querySelector("#rollsList");
 
@@ -26,7 +27,7 @@ function arraySum(total, num) {
 }
 
 rollDice.addEventListener("click", function () {
-  let numberOfDice = document.querySelector("[name=dNum]").value;
+  let numberOfDice = numDice.value;
   for (let index = 0; index < numberOfDice; index++) {
     dieRolls.push(getDiceResult());
   }
@@ -54,5 +55,3 @@ showRolls.addEventListener("click", function () {
 
 
 console.log(document.querySelector("#diceTotal").innerHTML)
-
-
